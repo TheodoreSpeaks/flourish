@@ -1,3 +1,4 @@
+import 'package:flourish/plant_profile.dart';
 import 'package:flutter/material.dart';
 
 class PlantDashboard extends StatelessWidget {
@@ -74,6 +75,11 @@ class PlantDashboard extends StatelessWidget {
                         ),
                         Expanded(
                           child: InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => PlantProfile(),
+                              ));
+                            },
                             child: Container(
                               width: double.infinity,
                               padding: const EdgeInsets.symmetric(
@@ -82,6 +88,7 @@ class PlantDashboard extends StatelessWidget {
                                   color: Colors.lightGreen,
                                   borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(64),
+                                    bottomRight: Radius.circular(64),
                                   )),
                               child: Center(
                                 child: Text(
@@ -120,7 +127,11 @@ class InfoIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => PlantProfile(),
+        ));
+      },
       child: Container(
         child: Column(
           children: [
